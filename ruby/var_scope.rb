@@ -12,3 +12,11 @@ end
     $j = 9
 end 
 p $j
+
+# INSTANCE VARIABLES - Available at a particular instance. used with @ symbol
+# eg @batting_average = 400
+
+# CONSTANTS - All caps by convention. its value changes and goes with the last value assigned.
+
+# CLASS VARIABLES availabe within a particular class and are denoted by @@
+# for example @@teams = ["A's", "Tigers"]
