@@ -1,0 +1,1 @@
+Hi! This is a general working folder that contains all my code practices. I hope you can learn a thing or two from it
