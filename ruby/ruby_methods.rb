@@ -79,4 +79,31 @@ end
 divide[12, 3]
 p divide
 
-# Ruby Lambda
+# Ruby Lambda - allow storing functions inside a variable eg
+my_name = lambda { |first, last| first + " " + last }
+# can call them same as procs
+p my_name["Simon", "Kevin"]
+
+# STABY lambdas
+other_name = -> (first, last) { first + " " + last }
+p other_name.call("Simon", "Kevin")
+
+# Differnces between lambdas and procs
+# 1 - Argument count: lampdas count arguments whereas procs don't
+# 2 - Return behaviour
+
+def difference_method_a
+    c = lambda {return}
+    c.call
+    p "Text within the method"
+end
+difference_method_a
+
+def difference_method_b
+    d = Proc.new { return }
+    d.call
+    p "Text within the method"
+end
+difference_method_b
+# the above block returns nil coz proc exits the code at encountering "return"
+
