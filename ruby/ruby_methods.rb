@@ -107,3 +107,23 @@ end
 difference_method_b
 # the above block returns nil coz proc exits the code at encountering "return"
 
+# Method arguments 
+def real_name(first_name, last_name) # you could leave out the ()  and the code works 
+    first_name + " " + last_name
+end
+puts real_name("Simon", "kevin")
+
+# Named Arguments
+def print_address city:, state:, zip:
+    puts city
+    puts state
+    puts zip 
+end
+print_address city: "Nairobi", state: "DonHomes", zip: "123"
+
+# Default arguments 
+def stream_movie title:, lang: lang = 'English'
+    puts title
+    puts lang
+end
+stream_movie title: 'the Son of a peasant becomes a billionaire'
