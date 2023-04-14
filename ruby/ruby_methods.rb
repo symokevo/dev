@@ -127,3 +127,42 @@ def stream_movie title:, lang: lang = 'English'
     puts lang
 end
 stream_movie title: 'the Son of a peasant becomes a billionaire'
+
+# Using splat and optional arguments. categories ( splats allow passing arrays as arguments to methods)
+# 1 - traditional splat arguments
+# 2 - Keyword-based splat arguments 
+# 3 - optional arguments 
+
+# 1 - traditional splat arguments - put *infront of the argument
+def roster *players
+    puts players
+end 
+roster 'Ataro', 'Juinor', 'Maxy'
+
+# 2 - Keyword-based splat arguments: use **double asterix to achieve this
+def reroster **players_with_positions
+    players_with_positions.each do |player, position| #this is a block argument
+        puts "Player: #{player}"
+        puts "Position: #{position}" 
+        puts "\n"
+    end 
+end
+# hashes store key/value-based data
+
+data = {
+    "Altuve": "2nd Base",
+    "Alex Bregman": "3rd Base",
+    "Evan Gattis": "Catcher",
+    "Augustine Owino": "OF"
+}
+
+reroster data
+
+# Optional arguments
+def innvoice options={}
+    puts options[:company]
+    puts options[:total]
+    puts options[:something_elso]
+end
+
+innvoice company: "Google", total: 123, state: "AZ"
