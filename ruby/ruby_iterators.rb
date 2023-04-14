@@ -64,8 +64,9 @@ end
 (1...10).to_a.select(&:even?) # & - shortcut for avoiding block variable
 
 # below code only shows >5 letterd words
-arr = %w(The quick brown fox jumped over the lazy dog) # %w is used to convert the sentence to an array of words
-arr.select { |x| x.length> 5}
+# arr = %w(The quick brown fox jumped over the lazy dog) # %w is used to convert the sentence to an array of words
+# arr.select { |x| x.length> 5 }
+
 %x(a b c d e f g).select { |v| v =~ /[aeiou] }
 
 # passing multiple conditions to select
@@ -74,3 +75,47 @@ arr.select do |e|
     e % 3 == 0 && e % 5 == 0
 end
 
+# MAP METHOD
+# ["1", "23.0", "0", "4"].map {|x| x.to_i}
+# ["1", "23.0", "0", "4"].map(&:to_i)
+
+# converting a, b, c, d to aa, bb, cc, dd
+("a"..."g").map { |i| i * 2 }
+# converting an array of numbers into a hash
+Hash[[1, 2.1, 3.33, 0.9].map {|x| [x, x.to_i]}]
+
+# Convert a sentence to an array of words and creat a hash that takes each word  as the key and their lengths as value
+Hash[ %w(A dynamic open source programming language).map { |x| [x, x.length]}]
+
+# values set foo and bar with keys a and b respectively are combined into a safe url as follows
+{:a =>"foo", :b =>"bar"}.map { |a,b| "#{a}=#{b}"}.join('&')
+
+# method that generates a flexible baseball lineup using map
+players = ["simon", "kevin", "rabbs"]
+
+def lineup_generator(list, &block)
+    list.map.with_index(1) do |player, index|
+        yield(index, player)
+    end
+end
+
+# Summing values in an array using the inject method
+# manual way 
+total = 0
+[3, 2, 4, 53, 5, 3, 23343, 4342, 12, 3].each do |i|
+    total += i
+end
+puts total
+# or simpy:
+[3, 2, 4, 53, 5, 3, 23343, 4342, 12, 3].inject(&:+)
+# you could also multiply
+[3, 2, 4, 53, 5, 3, 23343, 4342, 12, 3].inject(&:*)
+
+# NOTE: ruby treats + as a method unlike an operator
+# creating a histogram with inject
+def histogram nums 
+    nums.inject(Hash.new(0)) so |hash, e|
+        hash[e] += 1
+        hash
+    end
+end
