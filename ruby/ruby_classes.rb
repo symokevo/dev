@@ -73,11 +73,11 @@ phone.api_logger
 # SOLID OOP DEVELOPMENT 
 
 =begin 
-single responsibility principle
+single responsibility principle: SRP
 open/closed principle   
-liskov substitution principle
-interface segregation principle
-dependency inversion principle
+liskov substitution principle: LSP
+interface segregation principle: ISP
+dependency inversion principle: DIP
 =end
 
 # 1. Single responsibility principle (SRP) -  Each class and module focus on a single task eg 
@@ -247,3 +247,4 @@ moderator = Moderator.new(Blog.new)
 moderator.edit_post
 moderator.delete_post
 
+# 5. The Dependency inversion principle - high level objects should not depend on low level implementations
