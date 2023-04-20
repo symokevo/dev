@@ -38,3 +38,14 @@ File.open("ruby-files/to_be_deleted.txt", 'w+') {
 
 File.delete("ruby-files/to_be_deleted.txt")
 
+# Appending a file
+=begin 
+do
+    sleep 1
+    puts "Record saved ..."
+    File.open("ruby-files/server_logs.txt", "a") {
+        |f| f.puts "Server started at: #{Time.new}"
+    }
+end
+=end 
+#find out why the above code doesn't work
