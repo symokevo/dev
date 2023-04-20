@@ -31,4 +31,10 @@ main_team = teams_A.split(', ') + teams_B.split(', ')
 # convert the main_team to uppercase
 main_team.each { |team| p team.upcase }
 
+# Deleting a file
+File.open("ruby-files/to_be_deleted.txt", 'w+') { 
+    |f| f.write("Twins, Astros, Mets, Yankees")
+}
+
+File.delete("ruby-files/to_be_deleted.txt")
 
