@@ -94,7 +94,7 @@ class Invoice
     end
 end 
 
-class Sales_tax
+class SalesTax
     def initialize(state:)
         @state = state 
     end 
@@ -117,6 +117,42 @@ end
 
 invoice = Invoice.new(customer: "Google", state: "AZ", total: 100)
 tax = SalesTax.new(state: 'CA')
-puts invoice.sales_tax
+puts tax.sales_tax
 Mailer.email(invoice.details)
 
+# 2. The Open/Closed principle - software elements (classes, modules, functions) should be open 
+#    for extension but closed for modification. eg
+class OrderReport
+    def initialize(customer:, total:)
+        @customer = customer
+        @total = total
+    end 
+end 
+
+class Invoice2 < OrderReport
+    def print_out
+        puts "Invoice"
+        puts @customer
+        puts @total
+    end 
+end 
+
+class BillingOfLading < OrderReport
+    def initialize(address:, **args)
+        super(**args)
+        @address = address
+    end
+
+    def print_out
+        puts "BOL"
+        puts @customer
+        puts "Shipping Label..."
+        puts @address
+    end
+end
+
+invoice2 = Invoice2.new(customer: "Google", total: 100)
+bill_of_lading = BillingOfLading.new(customer: "Yahoo", total: 200, address: "123 Any street")
+
+invoice2.print_out
+bill_of_lading.print_out
