@@ -214,3 +214,36 @@ def signed_in_today?
 end
 
 signed_in_today?
+
+# 4. Interface segregation principle
+=begin
+    - code should not be forced to depend on methods that it doesn't use. for example..
+=end 
+require 'forwardable'
+class Blog
+    def edit_post
+        puts "Post edited"
+    end
+
+    def delete_post 
+        puts "Post removed"
+    end
+
+    def create_post
+        puts "Post created"
+    end 
+end
+
+class Moderator 
+    extend Forwardable
+    def_delegators @blog, :edit_post
+
+    def initialize(blog)
+        @blog = blog
+    end 
+end 
+
+moderator = Moderator.new(Blog.new)
+moderator.edit_post
+moderator.delete_post
+
