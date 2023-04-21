@@ -57,3 +57,33 @@ else
 end
 
 # try rubular.com
+
+# Wheel of fortune game
+starting_sentence = "Hi from matching land"
+# convert the varible into a letters array in small caps
+sentence_array = starting_sentence.split("").map(&:downcase)
+p sentence_array
+
+# count the letters in the array excluding whitespaces
+accurate_count = sentence_array - [" "]
+final_sentence = starting_sentence.gsub(/[a-zA-Z]/, "_").split("")
+p final_sentence
+
+=begin
+    - convert letters into empty spaces as they are guessed. ie, guessed r, then its position is converted to an empty
+    space.
+    - then add the guessed letter to the final_sentence variable      
+=end
+
+while sentence_array.count("") < accurate_count.count
+    puts "Guess a letter..." 
+    guess = gets.downcase.chomp
+    if sentence_array.include? (guess)
+        letter_index = sentence_array.find_index(guess)
+        sentence_array[letter_index] = ""
+        final_sentence[letter_index] = guess 
+        puts "Correct! The sentence is now: #{final_sentence.join}"
+    else
+        puts "Sorry, that letter isn't the right answer, please try again."
+    end
+end
