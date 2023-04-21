@@ -34,3 +34,26 @@ p is_valid_email?("symokevo.com") ? "valid": "Invalid"
 p is_valid_email?("symo.r@kevo.com") ? "valid": "Invalid"
 p is_valid_email?("symo@kevo") ? "valid": "Invalid"
 
+# validating IP addresses using regular expressions
+
+IP_ADDRESS_REGEX = /^((?:(?:^|\.)(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])){4})$/
+# The above expression takes ips ranging from 172.16.0.0 to 172.31.255.255
+
+# validator method
+def is_valid_ip_address? ip 
+    ip =~ IP_ADDRESS_REGEX
+end
+
+# do your checks here
+p is_valid_ip_address? ("111.16.0.0") ? "Valid" : "Invalid"
+p is_valid_ip_address? ("172.16.0.0") ? "Valid" : "Invalid"
+p is_valid_ip_address? ("172.31.255.255") ? "Valid" : "Invalid"
+p is_valid_ip_address? ("172.31.255.256") ? "Valid" : "Invalid"
+
+if "999.16.0.0" =~ IP_ADDRESS_REGEX
+    p "Valid"
+else
+    p "Invalid"
+end
+
+# try rubular.com
