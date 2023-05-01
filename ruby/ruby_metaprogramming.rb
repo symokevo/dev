@@ -58,6 +58,25 @@ class Author
       super
     end
   end
+
+  # added this part to implement "define_method"
+  def fiction_details(arg)
+    puts "fiction details"
+    puts arg
+    puts "something else..."
+  end
+
+  def coding_details(arg)
+    puts "coding details"
+    puts arg
+    puts "something else..."
+  end
+
+  def history_details(arg)
+    puts "history details"
+    puts arg
+    puts "something else..."
+  end
 end
 
 author = Author.new
@@ -83,5 +102,45 @@ NOTE: This is the best practice to override the respond_to? method
   ****************************************************************
 =end
 
+# Implementing metaprogramming with define_method
+# - allows dynamically creating methods at runtime in a ruby program
 
+class Author
+  define_method("some_method") do
+    puts "some details"
+  end
+end
+
+author = Author.new
+author.some_method
+
+author2 = Author.new
+author2.coding_details("Zimaster level dev")
+
+# A best practice of implementing define_method
+class Author2
+  genres = %w(fiction coding history)
+  # with "%w" you can create an array without commas and double quotes
+
+  genres.each do |genre|
+    define_method("#{genre}_details") do |arg|
+      puts "Genre: #{genre}"
+      puts arg
+      puts genre.object_id # generate an object id
+    end
+  end
+end
+
+author = Author2.new
+author.coding_details "Simon kevin"
+author.fiction_details("zimastack of ziilabs")
+
+# Utilizing respond to in this codebase
+p author.respond_to?("conding_details")
+
+# DIFFERENCE between "define_method" & "method_missing"
+=begin
+  since define_method creates the methods at runtime, respond_to? method functionality is readily available
+  method_missing method doesn't trigger a call untill the method call has gone through the method call cycle in ruby
+=end
 
