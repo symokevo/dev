@@ -44,4 +44,20 @@ end
 a = [1, 5, 6, 6, 13, 213, 65, 7, 43, 90]
 p bubble_sort(a)
 
+# Implementing the Quick Sort algorithm
+class Array
+  def quicksort
+    return [] if empty?
+    # select a mid value from the array and store it in the pivot variable
+    pivot = delete_at(rand(size))
+    # partition the array based on the pivot variable
+    left, right = partition(&pivot.method(:>))
+    # return left, right and pivot & call quicksort on both left and right
+    return *left.quicksort, pivot, *right.quicksort
+  end
+end
+arr = [2, 34, 3, 65, 7, 35, 67, 86]
+p arr.quicksort
+
+
 
