@@ -1,3 +1,5 @@
+require 'prime'
+
 # Introduction to SORTING algorithms
 # a = [1, 5, 6, 6, 13, 213, 65, 7, 43, 90]
 # p a.sort
@@ -87,4 +89,15 @@ end
 # test the implementation
 arr2 = [45, 54, 45, 765, 465, 676, 8, 767, 23]
 p merge_sort(arr2)
+
+
+# Implementing a Prime Number counting Algorithm
+# you have to require prime library as i have done at the top of the file.( require 'prime')
+
+# store prime numbers in an array
+prime_array = Prime.take_while{ |p| p < 2_000_000 }
+
+# add all the values to the array
+total_count = prime_array.inject{ |sum, x| sum + x }
+p total_count
 
