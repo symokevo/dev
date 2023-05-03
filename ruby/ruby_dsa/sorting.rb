@@ -261,3 +261,13 @@ end
 
 result = Fibbing.new(4_000_000)
 p result.even_fibonacci
+
+# **********************************************************************
+=begin
+Implementing the least common multiple
+=====================================
+Question: What is the smallest positve number that is evenly divisible by all the numbers from 1 to 20?
+Note:lest common multiple - lcm
+Solution: you will use lcm
+=end
+p (1...20).to_a.reduce(:lcm)
