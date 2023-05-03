@@ -1,6 +1,7 @@
 require 'prime'
 require 'humanize'
 require 'date'
+# require `mathn`
 # Introduction to SORTING algorithms
 # a = [1, 5, 6, 6, 13, 213, 65, 7, 43, 90]
 # p a.sort
@@ -183,3 +184,33 @@ arr = [1,2,3]
 arr.permutation { |i| p i}
 =end
 p [0,1,2,3,4,5,6,7,8,9].permutation.to_a[999_999].join
+
+
+# **********************************************************************
+=begin
+Implementing an amicable algorithm
+=====================================
+Question: What is the sum of all the amicible numbers under 10,000?
+Note: - Take a number, identify all its divisors, and add them togetherr to get a value
+      - Next, take that final sum value, identify its divisors, and add them together.
+      - If the second sum value is the same as the original number for which you found divisors in the firs place,
+      - then both the original number and its final sum are considered amicible numbers
+Solution: you will need to include a gem called mathn
+=end
+
+class Integer
+  def dsum
+    return 1 if self < 2
+    pd = prime_division.flat_map{|n,p| [n] * p}
+    ([1] + (1..pd.size).flat_map{|e| pd.combination(e).map{|f| f.reduce(:*)}}).uniq.inject(:+)
+  end
+
+  def find_d_sum(n)
+    n.times.inject do |sum, cur|
+      other = cur.dsum
+      (cur != other && other.dsum == cur) ? sum +cur :sum
+    end
+  end
+end
+
+
