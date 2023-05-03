@@ -45,6 +45,7 @@ end
 
 a = [1, 5, 6, 6, 13, 213, 65, 7, 43, 90]
 p bubble_sort(a)
+# **********************************************************************
 
 # Implementing the Quick Sort algorithm
 class Array
@@ -60,6 +61,7 @@ class Array
 end
 arr = [2, 34, 3, 65, 7, 35, 67, 86]
 p arr.quicksort
+# **********************************************************************
 
 # Implementing the Merge-sort algorithm
 
@@ -89,7 +91,7 @@ end
 # test the implementation
 arr2 = [45, 54, 45, 765, 465, 676, 8, 767, 23]
 p merge_sort(arr2)
-
+# **********************************************************************
 
 # Implementing a Prime Number counting Algorithm
 # you have to require prime library as i have done at the top of the file.( require 'prime')
@@ -100,4 +102,20 @@ prime_array = Prime.take_while{ |p| p < 2_000_000 }
 # add all the values to the array
 total_count = prime_array.inject{ |sum, x| sum + x }
 p total_count
+# **********************************************************************
 
+# POWER DIGIT SUM ALGORITHM
+# Question: what is the sum of the digits of the numeber 2 to the power, 1000th power
+
+p (2 ** 1000).to_s
+
+# convert the string to an array of elements
+p (2 ** 1000).to_s.split(//)
+
+# convet to integers
+p (2 ** 1000).to_s.split(//).map(&:to_i)
+
+# Add the array elements using inject
+p (2 ** 1000).to_s.split(//).map(&:to_i).inject(:+)
+
+# **********************************************************************
