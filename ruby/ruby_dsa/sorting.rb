@@ -152,3 +152,23 @@ while end_date >= start_date
   # 86
 end
 puts sunday_counter # should print 171
+
+# **********************************************************************
+=begin
+How To Code a Fibonacci Digit Counter
+=====================================
+Question: What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
+Note: fibonacci sequence is a series where you add the next number to the previous number in that series
+Solution:
+=end
+def fibonacci_digit_counter
+  num1, num2, i = -1, 0,1
+  while i.to_s.length < 1000
+    num1 += 1
+    i, num2 = num2, num2 + i
+  end
+  num1
+end
+p fibonacci_digit_counter
+
+
