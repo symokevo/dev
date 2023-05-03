@@ -211,6 +211,22 @@ class Integer
       (cur != other && other.dsum == cur) ? sum +cur :sum
     end
   end
+  # p find_d_sum(10)
 end
 
+# **********************************************************************
+=begin
+Implementing a Factorial algorithm
+=====================================
+Question: What is the sum of the digits in the number 100?
+Note: A factorial is a number that is the multiplied value of itself as well as all the digits upto 1
+Solution:
+=end
 
+def factorial_value_sum_generator(factorial)
+  arr = (1..factorial).to_a.reverse.each {
+    |i| factorial += factorial * (i - 1)
+  }
+  factorial.to_s.split(//).map(&:to_i).inject(:+)
+end
+p factorial_value_sum_generator(100)
