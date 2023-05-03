@@ -230,3 +230,34 @@ def factorial_value_sum_generator(factorial)
   factorial.to_s.split(//).map(&:to_i).inject(:+)
 end
 p factorial_value_sum_generator(100)
+
+
+# **********************************************************************
+=begin
+Implementing an even Fibonacci number algorithm
+=====================================
+Question: By considering the terms in the fibonacci sequence whose values do not exceed 4 million,
+  find the sum of the even-valued numbers?
+Solution:
+=end
+class Fibbing
+  def initialize(max)
+    @num_1 = 0
+    @i = 0
+    @sum = 0
+    @num_2 = 1
+    @max = max
+  end
+  def even_fibonacci
+    while @i <= @max
+      @i = @num_1 + @num_2
+      @sum += @i if @i % 2 == 0
+      @num_1 = @num_2
+      @num_2 = @i
+    end
+    @sum
+  end
+end
+
+result = Fibbing.new(4_000_000)
+p result.even_fibonacci
