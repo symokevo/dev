@@ -59,5 +59,32 @@ end
 arr = [2, 34, 3, 65, 7, 35, 67, 86]
 p arr.quicksort
 
+# Implementing the Merge-sort algorithm
 
+def merge_sort(list)
+  if list.length <= 1
+    list
+  else
+    mid = (list.length / 2).floor
+    left = merge_sort(list[0..mid - 1])
+    right = merge_sort(list[mid..list.length])
+    merge(left, right)
+  end
+end
+
+def  merge(left, right)
+  if left.empty?
+    right
+  elsif right.empty?
+    left
+  elsif left.first < right.first
+    [left.first] + merge(left[1..left.length], right)
+  else
+    [right.first] + merge(left, right[1..right.length])
+  end
+end
+
+# test the implementation
+arr2 = [45, 54, 45, 765, 465, 676, 8, 767, 23]
+p merge_sort(arr2)
 
