@@ -1,5 +1,5 @@
 require 'prime'
-
+require 'humanize'
 # Introduction to SORTING algorithms
 # a = [1, 5, 6, 6, 13, 213, 65, 7, 43, 90]
 # p a.sort
@@ -119,3 +119,15 @@ p (2 ** 1000).to_s.split(//).map(&:to_i)
 p (2 ** 1000).to_s.split(//).map(&:to_i).inject(:+)
 
 # **********************************************************************
+
+# Implementing a humanize counting algorithm
+# Question: If all the numbers from 1 to 1000 were written out in words, how many letters would be used
+# Solution: You will have to first install a gem called, "humanize" and require it as i have done in the second line of this file
+solution = (1..1000).to_a.map(&:humanize)
+p solution
+# above, you created a range 1-1000, converted it to an array of integers and called "humanize" method to
+# to convert the elements to named values
+
+p solution.join.tr(" -", "").size
+# used 'tr'- translate method to remove dashes and paces. then add size method to get them letter count
+
