@@ -1,5 +1,6 @@
 require 'prime'
 require 'humanize'
+require 'date'
 # Introduction to SORTING algorithms
 # a = [1, 5, 6, 6, 13, 213, 65, 7, 43, 90]
 # p a.sort
@@ -131,3 +132,23 @@ p solution
 p solution.join.tr(" -", "").size
 # used 'tr'- translate method to remove dashes and paces. then add size method to get them letter count
 
+# **********************************************************************
+# Implementing a date algorithm
+# Question: how many Sundays fell on the first of the month during the twentiecth century (January 1, 1901, to
+# December 31, 2000)?
+
+# solution: first require date
+start_date = Time.local(1901)
+end_date = Time.local(2000,12,31)
+sunday_counter = 0
+seconds_in_a_day = 86400
+
+while end_date >= start_date
+  if end_date.strftime("%A") == "Sunday" && end_date.strftime("%d") == "01"
+    sunday_counter += 1
+    # strftime method converts date to string
+  end
+  end_date -= seconds_in_a_day
+  # 86
+end
+puts sunday_counter # should print 171
