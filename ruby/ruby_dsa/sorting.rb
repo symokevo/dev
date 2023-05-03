@@ -171,4 +171,15 @@ def fibonacci_digit_counter
 end
 p fibonacci_digit_counter
 
-
+# **********************************************************************
+=begin
+Implementing a Permutation algorithm
+=====================================
+Question: What is the millionth lexicographic permutation of the digits 0,1,2,3,4,5,6,7,8, and 9?
+Note: Lexicographic permutation is the number of permutations you can make with a given set of numbers
+Solution:
+you are going to use the permutation method. the method functions as follows
+arr = [1,2,3]
+arr.permutation { |i| p i}
+=end
+p [0,1,2,3,4,5,6,7,8,9].permutation.to_a[999_999].join
