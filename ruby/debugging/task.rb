@@ -1,5 +1,6 @@
 require 'logger'
 logger = Logger.new(STDOUT)
+# An even shorter implementation: logger = Logger.new(STDOUT, level: Logger::ERROR)
 
 # display logs that are at the info level and higher only
 logger.level = Logger::INFO

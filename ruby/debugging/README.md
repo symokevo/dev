@@ -44,3 +44,13 @@ These are simply log tags, which could be either ERROR or INFO <br>
 
 * **FATAL**
 - Used for critical applications failures to log what information you can before the application terminates.
+
+## Order of Log levels
+- Debug
+- Info
+- Warn
+- Error
+- Fatal
+* Therefore declaring log level as **INFO** will only show logs from the **INFO** level and above ie. <br>
+**info, warn, error, fatal** <br>
+* **logger.level = Logger::ERROR** will only show ERROR and FATAL
