@@ -25,6 +25,22 @@ filtering the log output.
 ## log levels
 These are simply log tags, which could be either ERROR or INFO <br>
 * Other tags (or levels) could be:
-- DEBUB
+- DEBUG
 - WARN
 - FATAL
+
+## More on log levels
+* **DEBUG**
+- used for debugging purposes (during development) and is generally disabled in production.
+
+* **INFO**
+-  Used for genral messages and often for diagnostic or tracking purposes. (enabled at production)
+
+* **WARN**
+- Used for warning
+
+* **ERROR**
+- For error manages and exceptions
+
+* **FATAL**
+- Used for critical applications failures to log what information you can before the application terminates.
