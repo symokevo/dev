@@ -20,3 +20,11 @@ filtering the log output.
 
 ## Basic Logging in Ruby
 * Comes with some essential pieces of information like, category to filter on and a timestamp.
+# you can achieve this using the in-built logger class
+
+## log levels
+These are simply log tags, which could be either ERROR or INFO <br>
+* Other tags (or levels) could be:
+- DEBUB
+- WARN
+- FATAL
