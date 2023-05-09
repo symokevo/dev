@@ -1,0 +1,7 @@
+# Logfile created on 2023-05-09 07:05:20 +0300 by logger.rb/v1.5.3
+D, [2023-05-09T07:05:20.361733 #6808] DEBUG -- : User 2134 logged in
+D, [07:16:24:am  #7644] DEBUG -- : User 2134 logged in
+D, [May 09 2023 - 07:22:56:am  #6992] DEBUG -- : User 2134 logged in
+DEBUG | 2023-05-09 07:35:02 +0300 | User 23643 logged in
+DEBUG | 2023-05-09 07:36:27 +0300 | User 23643 logged in
+DEBUG | 2023-05-09 07:42:25 +0300 | UTC: 2023-05-09 04:42:25 UTC | User 23643 logged in
