@@ -5,7 +5,7 @@ An informative logfile could save both time and money for a system whenever erro
 ## Logging with the logger class
 * It is important to intuitively write **puts** statements at the start of your application throughout <br>
 the code in order to expose information to the developer.<br>
-* You could achieve this via the language inbuil functionalities such as:
+* You could achieve this via the language in-built functionalities such as:
 - Python's logging module
 - Java's log4j
 - Node's Winston
@@ -54,3 +54,32 @@ These are simply log tags, which could be either ERROR or INFO <br>
 * Therefore declaring log level as **INFO** will only show logs from the **INFO** level and above ie. <br>
 **info, warn, error, fatal** <br>
 * **logger.level = Logger::ERROR** will only show ERROR and FATAL
+
+logger class allows using a string to configure the log level from an external config input like config file<br>
+or an environment variable. eg. <br>
+logger = Logger.new(STDOUT, level: "error") or <br>
+logger = Logger.new(STDOUT, level: ENV[:LOG_LEVEL])<br>
+
+## Logger output destinations
+- STDOUT (Standard output), STDERR (Standard error), File
+## Log file
+- a file created from the logger class to keep system logs for the program<br>
+## Formatting the log
+* Custom Date Formats
+You could use: logger.datetime_format = "%I:%M:%S:%P " where:<br>
+%I: Hour (12-hour clock)<br>
+%M: Minute <br>
+%S: Second <br>
+%P: Meridian indicator(am/pm) <br>
+## Log file Management:
+- log files easily go out of control over time<br>
+You can avoid this issue by configuring log retention and rollover. use either:
+
+* Size-Based Retention
+Specify the exact size of the log files and the number to keep before being erased. eg size <= 100mb <br>
+and keep only upto 5 of them. totaling to 500mb at maximum. <br>
+You can also keep local copies for history purposes.<br>
+
+* Time-based Retention
+This means that you could roll over your logs on a daily, weekly or monthly basis. 
+
