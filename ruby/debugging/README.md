@@ -81,5 +81,19 @@ and keep only upto 5 of them. totaling to 500mb at maximum. <br>
 You can also keep local copies for history purposes.<br>
 
 * Time-based Retention
-This means that you could roll over your logs on a daily, weekly or monthly basis. 
+This means that you could roll over your logs on a daily, weekly or monthly basis.
 
+* Debugging Concepts
+**Breakpoints** -  a breakpoint is a point in your code at which you can pause program exception <br>
+and take a look around the current application state<br>
+
+**Stack Trace/Call stack/Back Trace** - call stack is the stack of operations at the current time of execution.<br>
+stack trace represents call stack and is likely to appear in an error log. back trace = stack trace.
+
+They all equate to a record of a trail of calling functions up until a give point in time<br>
+
+**StepOver, StepInto, StepOut** - allow you to step through your code.<br>
+StepOver - to move onto the nex executable line of code.<br>
+
+**Debugging via CLI with byebug** -byebug is a terminal-based debugger.<br>
+* installation: **gem install byebug**
