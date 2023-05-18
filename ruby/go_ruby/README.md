@@ -55,3 +55,17 @@ A private struct is a struct that is only visible to the package it is defined i
 - What is a struct field in Go?
 A struct field is a variable that is part of a struct.
 
+## Public Structs
+- What have we learned?
+Structs are a way to group data together, and you can also make it publicly available for
+other packages.
+- Why is it useful?
+Sharing packages in Go is useful because it allows you to reuse code in different projects.
+- How do you make your Golang struct publicly available?
+You can make your struct publicly available by capitalizing the struct type alias name.
+- What other Golang functionality that you can made public?
+You can also make your functions and variables publicly available by capitalizing their
+names.
+- How do you mutate an existing struct values?
+By attaching a struct to a function, you can perform mutations of existing values.
+
