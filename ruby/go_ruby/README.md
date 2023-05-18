@@ -33,3 +33,25 @@ An instance variable is a variable that is associated with an instance of a clas
 access via a single reference.
 - How do you create an instance variable in Ruby?
 You can create an instance variable by using the @ sign, followed by the variable name.
+
+## Struct
+- What have we learned?
+We learned that struct is a type that you can declaratively group and define data fields, which
+is accessible via a single reference.
+- Why is it useful?
+Struct is useful because it provides a way to pass a value from within functions.
+- What is a struct?
+A struct is a user-defined type that is used to group together a number of variables of different
+types.
+- What is the equivalent of an struct in Ruby?
+An instance variable.
+- How do you declare a variable in Go?
+You declare a variable in Go by using the keyword var.
+- How do you create a struct in Go?
+You can declare a struct using the struct keyword, followed by the struct name, followed by
+the field name and type.
+- What is a private struct in Go?
+A private struct is a struct that is only visible to the package it is defined in.
+- What is a struct field in Go?
+A struct field is a variable that is part of a struct.
+
