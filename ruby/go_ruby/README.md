@@ -20,4 +20,16 @@ A local variable is a variable that you can only access from inside the function
 - What is a global variable?
 A global variable is a variable that you can access from anywhere in your code.<br>
 
-
+## Instance variables
+- can be accessed via a single reference and they take the format **@name** in ruby. <br>
+- What have we learned?
+We learned that we can pass values to other functions without having to initialize any object
+using instance variables.
+- Why is it useful?
+It is useful because it is used to store data that is specific to an instance of a class or stores a
+value that is specific to a particular object.
+- What is an instance variable?
+An instance variable is a variable that is associated with an instance of a class, that you can
+access via a single reference.
+- How do you create an instance variable in Ruby?
+You can create an instance variable by using the @ sign, followed by the variable name.
