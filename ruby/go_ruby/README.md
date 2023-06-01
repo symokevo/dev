@@ -69,3 +69,4 @@ names.
 - How do you mutate an existing struct values?
 By attaching a struct to a function, you can perform mutations of existing values.
 
+## Attaching a struct to a Function
