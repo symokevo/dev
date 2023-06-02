@@ -11,7 +11,7 @@ export class AppComponent {
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {
     chart: {
-      type: "column"
+      type: "area"
     },
     title: {
       text: "Monthly Sales Chart Department Wise"
@@ -28,12 +28,12 @@ export class AppComponent {
       }
     },
     series: [{
-      type: "column",
+      type: "area",
       name: 'Marketing Department',
       data: [49.9, 51.5, 32.0, 82.0, 75.0, 66.0, 32.0, 25.0, 35.4, 65.1, 58.6, 34.4]
     },
     {
-      type: "column",
+      type: "area",
       name: 'Computer Science Department',
       data: [40.5, 34.5, 84.4, 39.2, 23.2, 45.0, 55.6, 18.5, 26.4, 14.1, 23.6, 84.4]
     }]
