@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { PiechartComponent } from './piechart/piechart.component';
+import { DonutchartComponent } from './donutchart/donutchart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PiechartComponent
+    PiechartComponent,
+    DonutchartComponent
   ],
   imports: [
     BrowserModule,
