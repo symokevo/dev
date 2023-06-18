@@ -9,9 +9,15 @@ import { DonutchartComponent } from './donutchart/donutchart.component';
 import { DrilldownchartComponent } from './drilldownchart/drilldownchart.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { AreachartComponent } from './areachart/areachart.component';
+import { StackbarChartComponent2 } from './stackbar-chart/stackbar-chart.component';
 import { Areachart2Component } from './areachart2/areachart2.component';
 import { AreaSplinechartComponent } from './area-splinechart/area-splinechart.component';
-import { StackbarChartComponent } from './stackbar-chart/stackbar-chart.component';
+import { HistogramComponent } from './histogram/histogram.component';
+import { HeatmapSeriesChartComponent } from './heatmap-series-chart/heatmap-series-chart.component';
+import { NewComponentComponent } from './new-component/new-component.component';
+import { StackbarchartComponent } from './stackbarchart/stackbarchart.component';
+import { PyramidChartComponent } from './pyramid-chart/pyramid-chart.component';
+import { StackPyramidChartComponent } from './stack-pyramid-chart/stack-pyramid-chart.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,14 @@ import { StackbarChartComponent } from './stackbar-chart/stackbar-chart.componen
     AreachartComponent,
     Areachart2Component,
     AreaSplinechartComponent,
-    StackbarChartComponent
+    StackbarchartComponent,
+    StackbarChartComponent2,
+    HistogramComponent,
+    HeatmapSeriesChartComponent,
+    NewComponentComponent,
+    StackbarchartComponent,
+    PyramidChartComponent,
+    StackPyramidChartComponent
   ],
   imports: [
     BrowserModule,

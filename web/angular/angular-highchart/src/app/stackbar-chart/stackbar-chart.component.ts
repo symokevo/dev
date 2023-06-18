@@ -20,7 +20,7 @@ interface ExtendedZoom extends Highcharts.ChartOptions {
   templateUrl: './stackbar-chart.component.html',
   styleUrls: ['./stackbar-chart.component.css']
 })
-export class StackbarChartComponent {
+export class StackbarChartComponent2 {
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {
     chart: {
