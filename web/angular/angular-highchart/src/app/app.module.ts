@@ -18,6 +18,7 @@ import { NewComponentComponent } from './new-component/new-component.component';
 import { StackbarchartComponent } from './stackbarchart/stackbarchart.component';
 import { PyramidChartComponent } from './pyramid-chart/pyramid-chart.component';
 import { StackPyramidChartComponent } from './stack-pyramid-chart/stack-pyramid-chart.component';
+import { GaugeChartComponent } from './gauge-chart/gauge-chart.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { StackPyramidChartComponent } from './stack-pyramid-chart/stack-pyramid-
     NewComponentComponent,
     StackbarchartComponent,
     PyramidChartComponent,
-    StackPyramidChartComponent
+    StackPyramidChartComponent,
+    GaugeChartComponent
   ],
   imports: [
     BrowserModule,
